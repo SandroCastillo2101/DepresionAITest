@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Inventario de Depresión de Beck</h3>
+    <form method="POST">
+        <p><strong>Edad</strong></p>
+        <input type="number" min="0" name="edad">
+        <p><strong>Genero</strong></p>
+            <p><input type="radio" name="genero" value="0"> <span>Masculino</span></p>
+            <p><input type="radio" name="genero" value="1"> <span>Femenino</span></p>
+        <p><strong>Estado Civil</strong></p>
+            <p><input type="radio" name="estado_civil" value="0"> <span>Soltero</span></p>
+            <p><input type="radio" name="estado_civil" value="1"> <span>Conviviente</span></p>
+            <p><input type="radio" name="estado_civil" value="2"> <span>Casado</span></p>
+            <p><input type="radio" name="estado_civil" value="3"> <span>Divorciado</span></p>
+            <p><input type="radio" name="estado_civil" value="4"> <span>Viudo</span></p>
+        <p><strong>1. Tristeza</strong></p>
+            <p><input type="radio" name="preg_1" value="0"> <span>No me siento triste.</span></p>
+            <p><input type="radio" name="preg_1" value="1"> <span>Me siento triste gran parte del tiempo.</span></p>
+            <p><input type="radio" name="preg_1" value="2"> <span>Me siento triste todo el tiempo.</span></p>
+            <p><input type="radio" name="preg_1" value="3"> <span>Me siento tan triste o soy tan infeliz que no puedo soportarlo.</span></p>
+        <p><strong>2. Pesimismo</strong></p>
+            <p><input type="radio" name="preg_2" value="0"> <span>No estoy desalentado respecto del mi futuro.</span></p>
+            <p><input type="radio" name="preg_2" value="1"> <span>Me siento más desalentado respecto de mi futuro que lo que solía estarlo.</span></p>
+            <p><input type="radio" name="preg_2" value="2"> <span>No espero que las cosas funcionen para mi.</span></p>
+            <p><input type="radio" name="preg_2" value="3"> <span>Siento que no hay esperanza para mi futuro y que sólo puede empeorar.</span></p>
+        <p><strong>3. Fracaso</strong></p>
+            <p><input type="radio" name="preg_3" value="0"> <span>No me siento como un fracasado.</span></p>
+            <p><input type="radio" name="preg_3" value="1"> <span>He fracasado más de lo que hubiera debido.</span></p>
+            <p><input type="radio" name="preg_3" value="2"> <span>Cuando miro hacia atrás, veo muchos fracasos.</span></p>
+            <p><input type="radio" name="preg_3" value="3"> <span>Siento que como persona soy un fracaso total.</span></p>
+        <p><strong>4. Pérdida de Placer</strong></p>
+            <p><input type="radio" name="preg_4" value="0"> <span>Obtengo tanto placer como siempre por las cosas de las que disfruto.</span></p>
+            <p><input type="radio" name="preg_4" value="1"> <span>No disfruto tanto de las cosas como solía hacerlo.</span></p>
+            <p><input type="radio" name="preg_4" value="2"> <span>Obtengo muy poco placer de las cosas que solía disfrutar.</span></p>
+            <p><input type="radio" name="preg_4" value="3"> <span>No puedo obtener ningún placer de las cosas de las que solía disfrutar.</span></p>
+        <p><strong>5. Sentimientos de Culpa</strong></p>
+            <p><input type="radio" name="preg_5" value="0"> <span>No me siento particularmente culpable.</span></p>
+            <p><input type="radio" name="preg_5" value="1"> <span>Me siento culpable respecto de varias cosas que he hecho o que debería haber hecho.</span></p>
+            <p><input type="radio" name="preg_5" value="2"> <span>Me siento bastante culpable la mayor parte del tiempo.</span></p>
+            <p><input type="radio" name="preg_5" value="3"> <span>Me siento culpable todo el tiempo.</span></p>
+        <p><strong>6. Sentimientos de Castigo</strong></p>
+            <p><input type="radio" name="preg_6" value="0"> <span>No siento que este siendo castigado.</span></p>
+            <p><input type="radio" name="preg_6" value="1"> <span>Siento que tal vez pueda ser castigado.</span></p>
+            <p><input type="radio" name="preg_6" value="2"> <span>Espero ser castigado.</span></p>
+            <p><input type="radio" name="preg_6" value="3"> <span>Siento que estoy siendo castigado.</span></p>
+        <p><strong>7. Disconformidad con uno mismo</strong></p>
+            <p><input type="radio" name="preg_7" value="0"> <span>Siento acerca de mi lo mismo que siempre.</span></p>
+            <p><input type="radio" name="preg_7" value="1"> <span>He perdido la confianza en mí mismo.</span></p>
+            <p><input type="radio" name="preg_7" value="2"> <span>Estoy decepcionado conmigo mismo.</span></p>
+            <p><input type="radio" name="preg_7" value="3"> <span>No me gusto a mí mismo.</span></p>
+        <p><strong>8. Autocrítica</strong></p>
+            <p><input type="radio" name="preg_8" value="0"> <span>No me critico ni me culpo más de lo habitual.</span></p>
+            <p><input type="radio" name="preg_8" value="1"> <span>Estoy más crítico conmigo mismo de lo que solía estarlo.</span></p>
+            <p><input type="radio" name="preg_8" value="2"> <span>Me critico a mí mismo por todos mis errores.</span></p>
+            <p><input type="radio" name="preg_8" value="3"> <span>Me culpo a mí mismo por todo lo malo que sucede.</span></p>
+        <p><strong>9. Pensamientos o Deseos Suicidas</strong></p>
+            <p><input type="radio" name="preg_9" value="0"> <span>No tengo ningún pensamiento de matarme.</span></p>
+            <p><input type="radio" name="preg_9" value="1"> <span>He tenido pensamientos de matarme, pero no lo haría.</span></p>
+            <p><input type="radio" name="preg_9" value="2"> <span>Querría matarme.</span></p>
+            <p><input type="radio" name="preg_9" value="3"> <span>Me mataría si tuviera la oportunidad de hacerlo.</span></p>
+        <p><strong>10. Llanto</strong></p>
+            <p><input type="radio" name="preg_10" value="0"> <span>No lloro más de lo que solía hacerlo.</span></p>
+            <p><input type="radio" name="preg_10" value="1"> <span>Lloro más de lo que solía hacerlo.</span></p>
+            <p><input type="radio" name="preg_10" value="2"> <span>Lloro por cualquier pequeñez.</span></p>
+            <p><input type="radio" name="preg_10" value="3"> <span>Siento ganas de llorar pero no puedo.</span></p>
+        <p><strong>11. Agitación</strong></p>
+            <p><input type="radio" name="preg_11" value="0"> <span>No estoy más inquieto o tenso que lo habitual.</span></p>
+            <p><input type="radio" name="preg_11" value="1"> <span>Me siento más inquieto o tenso que lo habitual.</span></p>
+            <p><input type="radio" name="preg_11" value="2"> <span>Estoy tan inquieto o agitado que me es difícil quedarme quieto.</span></p>
+            <p><input type="radio" name="preg_11" value="3"> <span>Estoy tan inquieto o agitado que tengo que estar siempre en movimiento o haciendo algo.</span></p>
+        <p><strong>12. Pérdida de Interés</strong></p>
+            <p><input type="radio" name="preg_12" value="0"> <span>No he perdido el interés en otras actividades o personas.</span></p>
+            <p><input type="radio" name="preg_12" value="1"> <span>Estoy menos interesado que antes en otras personas o cosas.</span></p>
+            <p><input type="radio" name="preg_12" value="2"> <span>He perdido casi todo el interés en otras personas o cosas.</span></p>
+            <p><input type="radio" name="preg_12" value="3"> <span>Me es difícil interesarme por algo.</span></p>
+        <p><strong>13. Indecisión</strong></p>
+            <p><input type="radio" name="preg_13" value="0"> <span>Tomo mis propias decisiones tan bien como siempre.</span></p>
+            <p><input type="radio" name="preg_13" value="1"> <span>Me resulta más difícil que de costumbre tomar decisiones.</span></p>
+            <p><input type="radio" name="preg_13" value="2"> <span>Encuentro mucha más dificultad que antes para tomar decisiones.</span></p>
+            <p><input type="radio" name="preg_13" value="3"> <span>Tengo problemas para tomar cualquier decisión.</span></p>
+        <p><strong>14. Desvalorización</strong></p>
+            <p><input type="radio" name="preg_14" value="0"> <span>No siento que yo no sea valioso.</span></p>
+            <p><input type="radio" name="preg_14" value="1"> <span>No me considero a mi mismo tan valioso y útil como solía considerarme.</span></p>
+            <p><input type="radio" name="preg_14" value="2"> <span>Me siento menos valioso cuando me comparo con otros.</span></p>
+            <p><input type="radio" name="preg_14" value="3"> <span>Siento que no valgo nada.</span></p>
+        <p><strong>15. Pérdida de Energía</strong></p>
+            <p><input type="radio" name="preg_15" value="0"> <span>Tengo tanta energía como siempre.</span></p>
+            <p><input type="radio" name="preg_15" value="1"> <span>Tengo menos energía que la que solía tener.</span></p>
+            <p><input type="radio" name="preg_15" value="2"> <span>No tengo suficiente energía para hacer demasiado .</span></p>
+            <p><input type="radio" name="preg_15" value="3"> <span>No tengo energía suficiente para hacer nada.</span></p>
+        <p><strong>16. Cambios en los Hábitos de Sueño</strong></p>
+            <p><input type="radio" name="preg_16" value="0"> <span>No he experimentado ningún cambio en mis hábitos de sueño.</span></p>
+            <p><input type="radio" name="preg_16" value="1"> <span>Duermo un poco menos que lo habitual.</span></p>
+            <p><input type="radio" name="preg_16" value="2"> <span>Duermo mucho menos que lo habitual.</span></p>
+            <p><input type="radio" name="preg_16" value="3"> <span>Me despierto 1-2 horas más temprano y no puedo volver a dormirme.</span></p>
+        <p><strong>17. Irritabilidad</strong></p>
+            <p><input type="radio" name="preg_17" value="0"> <span>No estoy tan irritable que lo habitual.</span></p>
+            <p><input type="radio" name="preg_17" value="1"> <span>Estoy más irritable que lo habitual.</span></p>
+            <p><input type="radio" name="preg_17" value="2"> <span>Estoy mucho más irritable que lo habitual.</span></p>
+            <p><input type="radio" name="preg_17" value="3"> <span>Estoy irritable todo el tiempo.</span></p>
+        <p><strong>18. Cambios en el Apetito</strong></p>
+            <p><input type="radio" name="preg_18" value="0"> <span>No he experimentado ningún cambio en mi apetito.</span></p>
+            <p><input type="radio" name="preg_18" value="1"> <span>Mi apetito es un poco menor que lo habitual.</span></p>
+            <p><input type="radio" name="preg_18" value="2"> <span>Mi apetito es mucho menor que antes.</span></p>
+            <p><input type="radio" name="preg_18" value="3"> <span>No tengo apetito en absoluto.</span></p>
+        <p><strong>19. Dificultad de Concentración</strong></p>
+            <p><input type="radio" name="preg_19" value="0"> <span>Puedo concentrarme tan bien como siempre.</span></p>
+            <p><input type="radio" name="preg_19" value="1"> <span>No puedo concentrarme tan bien como habitualmente.</span></p>
+            <p><input type="radio" name="preg_19" value="2"> <span>Me es difícil mantener la mente en algo por mucho tiempo.</span></p>
+            <p><input type="radio" name="preg_19" value="3"> <span>Encuentro que no puedo concentrarme en nada.</span></p>
+        <p><strong>20. Cansancio o Fatiga</strong></p>
+            <p><input type="radio" name="preg_20" value="0"> <span>No estoy más cansado o fatigado que lo habitual.</span></p>
+            <p><input type="radio" name="preg_20" value="1"> <span>Me fatigo o me canso más fácilmente que lo habitual.</span></p>
+            <p><input type="radio" name="preg_20" value="2"> <span>Estoy demasiado fatigado o cansado para hacer muchas de las cosas que solía hacer.</span></p>
+            <p><input type="radio" name="preg_20" value="3"> <span>Estoy demasiado fatigado o cansado para hacer la mayoría de las cosas que solía hacer.</span></p>
+        <p><strong>21. Pérdida de Interés en el Sexo</strong></p>
+            <p><input type="radio" name="preg_21" value="0"> <span>No he notado ningún cambio reciente en mi interés por el sexo.</span></p>
+            <p><input type="radio" name="preg_21" value="1"> <span>Estoy menos interesado en el sexo de lo que solía estarlo.</span></p>
+            <p><input type="radio" name="preg_21" value="2"> <span>Estoy mucho menos interesado en el sexo.</span></p>
+            <p><input type="radio" name="preg_21" value="3"> <span>He perdido completamente el interés en el sexo.</span></p>
+            <button type="submit">Enviar test</button>
+    </form>
+    <br>
+    <button><a href="index.html">Regresar</a></button>
+</body>
+</html>
