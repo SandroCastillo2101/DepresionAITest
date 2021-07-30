@@ -1,8 +1,10 @@
 from sklearn import tree
+from sklearn import ensemble
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 from flask import Flask,render_template,request,jsonify,redirect
+from imblearn.over_sampling import SMOTE
 
 def preprocess():
     input_file = "Depresion_v2.csv"
@@ -21,17 +23,49 @@ def preprocess():
     X = df.iloc[:, 1:-1]
     y = df["Depresion"]
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+    smt = SMOTE(random_state=42)
+    X_smt, y_smt = smt.fit_resample(X, y)
+    X_train, X_test, y_train, y_test = train_test_split(X_smt, y_smt, test_size=0.3, random_state=42)
+
     return X_train, X_test, y_train, y_test
 
-def J48(X_train, X_test, y_train, y_test):
-    clf = tree.DecisionTreeClassifier()
-    clf = clf.fit(X_train, y_train)
+def print_mc(matriz_conf):
+    matriz_conf = pd.DataFrame(matriz_conf)
+    matriz_conf.index = ["Real_0","Real_1"]
+    matriz_conf.columns = ["Pred_0","Pred_1"]
+    print(matriz_conf) 
 
-    y_pred = clf.predict(X_test)
-    print("Accuracy:", metrics.accuracy_score(y_test, y_pred))
-    print("Confusion matrix:\n", metrics.confusion_matrix(y_test, y_pred))
-    return clf
+def fx_evaluate_classif(y_real, pred, pred_proba):
+    from sklearn import metrics as mt
+    matriz_conf = mt.confusion_matrix(y_real,pred)
+    print_mc(matriz_conf)
+    roc = mt.roc_auc_score(y_real,pred_proba)
+    accuracy_real = mt.accuracy_score(y_real,pred)
+    print("\nROC: ", roc) 
+    print("Accu:", accuracy_real,'\n')
+    print(mt.classification_report(y_real, pred)[0:163])
+
+def J48(X_train, X_test, y_train, y_test):
+
+    model_rf = ensemble.RandomForestClassifier(n_estimators=157,min_samples_split=3,min_samples_leaf=1,max_features='auto',max_depth=8,bootstrap=False,
+                                  n_jobs = 4,random_state=49)
+    model_rf.fit(X_train, y_train)
+    model_smt = model_rf
+    
+    # Generar las predicciones:
+    y_pred_train_smt= model_smt.predict(X_train)
+    y_pred_test_smt= model_smt.predict(X_test)
+
+    # Generar las probabilidades
+    y_pred_proba_train_smt= model_smt.predict_proba(X_train)[:,1]
+    y_pred_proba_test_smt= model_smt.predict_proba(X_test)[:,1]
+
+    print("Metricas del Training..." + "\n")
+    fx_evaluate_classif(y_train, y_pred_train_smt, y_pred_proba_train_smt)
+    print("Metricas del Testing..." + "\n")
+    fx_evaluate_classif(y_test, y_pred_test_smt, y_pred_proba_test_smt)
+
+    return model_smt
 
 def OneTest(model, x):
     x[0][0] = request.form['edad']
